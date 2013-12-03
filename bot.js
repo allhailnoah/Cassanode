@@ -1,5 +1,5 @@
 var irc = require("irc");
-var bot = new irc.Client("irc.afternet.org", "Cassandra", {channels:["#GamedevTeam","#ScratchTheCat","#AHN"],userName:'Cassandra',realName:'Cassandra of New Noah City',port: 9998, secure: true, floodProtection: true});
+var bot = new irc.Client("irc.afternet.org", "Cassandra", {channels:["#GamedevTeam","#ScratchTheCat","#AHN"],userName:'Cassandra',realName:'Cassandra of New Noah City', floodProtection: true});
 bot.addListener("join", function(channel, who) {
     bot.notice(channel, who.toUpperCase() + " ARRIVES IN A BLAZE OF GLORY");
 });
