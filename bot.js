@@ -3,7 +3,7 @@ var bot = new irc.Client("irc.afternet.org", "Cassandra", {channels:["#GamedevTe
 bot.addListener("join", function(channel, who) {
     bot.notice(channel, who.toUpperCase() + " ARRIVES IN A BLAZE OF GLORY");
 });
-bot.addListener("message", function(nick, to, text, message) {
+bot.addListener("message", function(from, to, message) {
     if (message.indexOf("o/") > -1) {
         bot.message(to, "\o");
     }
