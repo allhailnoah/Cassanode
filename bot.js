@@ -1,5 +1,5 @@
 var irc = require("irc");
-var bot = new irc.Client("irc.afternet.org", "Cassandra", {channels:["#GamedevTeam","#ScratchTheCat","#AHN"]});
+var bot = new irc.Client("irc.afternet.org", "Cassandra", {channels:["#GamedevTeam","#ScratchTheCat","#AHN"],userName:'Cassandra',realName:'Cassandra of New Noah City',port: 9998, secure: true, floodProtection: true});
 bot.addListener("join", function(channel, who) {
     bot.notice(channel, who.toUpperCase() + " ARRIVES IN A BLAZE OF GLORY");
 });
@@ -23,5 +23,8 @@ bot.addListener("message", function(from, to, message) {
                 process.exit();
             }
         });
+    }
+    if (message.indexOf("!Dance") > -1) {
+        bot.action(to, "dances");
     }
 });
