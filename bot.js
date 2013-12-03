@@ -4,15 +4,15 @@ bot.addListener("join", function(channel, who) {
     bot.notice(channel, who.toUpperCase() + " ARRIVES IN A BLAZE OF GLORY");
 });
 bot.addListener("message", function(nick, to, text, message) {
-    if (message.search("o/") != -1) {
+    if (message.indexOf("o/") > -1) {
         bot.message(to, "\o");
     }
-    if (message.search("\o") != -1) {
+    if (message.indexOf("\\o") > -1) {
         bot.message(to, "o/");
     }
-    if (message.search("!Bosozoku") != -1) {
+    if (message.indexOf("!Bosozoku") > -1) {
         bot.whois(nick, function(info) {
-            if (info.host.search("michcioperz.Users.Afternet.Org") != -1) {
+            if (info.host.indexOf("michcioperz.Users.Afternet.Org") > -1) {
                 bot.disconnect();
                 process.exit();
             }
