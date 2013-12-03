@@ -5,13 +5,13 @@ bot.addListener("join", function(channel, who) {
 });
 bot.addListener("message", function(from, to, message) {
     if (message.indexOf("o/") > -1) {
-        bot.say(to, "\o");
+        bot.say(to, "\\o");
     }
     if (message.indexOf("\\o") > -1) {
         bot.say(to, "o/");
     }
     if (message.indexOf("!Bosozoku") > -1) {
-        bot.whois(nick, function(info) {
+        bot.whois(from, function(info) {
             if (info.host.indexOf("michcioperz.Users.Afternet.Org") > -1) {
                 bot.disconnect();
                 process.exit();
