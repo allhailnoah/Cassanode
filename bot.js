@@ -5,10 +5,10 @@ bot.addListener("join", function(channel, who) {
 });
 bot.addListener("message", function(from, to, message) {
     if (message.indexOf("o/") > -1) {
-        bot.message(to, "\o");
+        bot.say(to, "\o");
     }
     if (message.indexOf("\\o") > -1) {
-        bot.message(to, "o/");
+        bot.say(to, "o/");
     }
     if (message.indexOf("!Bosozoku") > -1) {
         bot.whois(nick, function(info) {
